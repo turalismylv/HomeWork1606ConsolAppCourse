@@ -67,12 +67,8 @@ namespace ConsoleApp1
                         string ExistGroupName = Console.ReadLine();
                         foreach (var item in course.groups)
                         {
-                            if (item.Name != ExistGroupName)
-                            {
-                                Helper.Print("Bu adda qrup yoxdur,Zehmet olmasa yeniden daxil edin", ConsoleColor.Red);
-                                goto inputGroup;
-                            }
-                            else if (item.Name == ExistGroupName)
+                            
+                            if (item.Name == ExistGroupName)
                             {
                                 Helper.Print("Student adin qeyd edin", ConsoleColor.Green);
                                 string name = Console.ReadLine();
@@ -137,11 +133,7 @@ namespace ConsoleApp1
                                     }
                                 }
                             }
-                            else if (grpn != item.Name)
-                            {
-                                Helper.Print("Bu adda qrup  yoxdur,Zehmet olmasa yeniden daxil edin! twk<3", ConsoleColor.Red);
-                                goto grpName;
-                            }
+                            
                         }
 
                         break;
@@ -154,32 +146,13 @@ namespace ConsoleApp1
 
                         foreach (var item in course.groups)
                         {
-                            //    List<Student> result = item.studens.FindAll((item) => stn.ToUpper().Contains(item.Name.ToUpper()) || stn.ToUpper().Contains(item.Surname.ToUpper()));
-                            //    foreach (var elem in result)
-                            //    {
-                            //        if (elem.Name!=stn)
-                            //        {
-                            //            Helper.Print("Axtardiqiniz adda telebe yoxdur! ", ConsoleColor.Red);
-                            //           goto case 5;
-                            //        }
-                            //        else if(elem.Name==stn)
-                            //        {
-                            //            Console.WriteLine(elem.Id+" "+elem.Name+" "+elem.Surname );
-                            //        }
-
-                            //    }
-
                             foreach (var item1 in item.studens)
                             {
                                 if (stn.ToUpper() == item1.Name.ToUpper())
                                 {
                                     Helper.Print($"{item1.Id}  {item1.Name} {item1.Surname}", ConsoleColor.Yellow);
                                 }
-                                else if (stn != item1.Name)
-                                {
-                                    Helper.Print("Axtardiqiniz adda telebe yoxdur! ", ConsoleColor.Red);
-                                    goto case 5;
-                                }
+                                
                             }
                         }
 
@@ -264,12 +237,6 @@ namespace ConsoleApp1
                                 }
 
                             }
-                            else if (edt != item.Name)
-                            {
-                                Helper.Print("Bu adda qrup yoxdur,zehmet olmasa yeniden daxil edin ", ConsoleColor.Red);
-                                goto case 7;
-                            }
-
                         }
                         idd:
                         Helper.Print("Editlemek istediyin student ID qeyd edin", ConsoleColor.Green);
@@ -315,11 +282,7 @@ namespace ConsoleApp1
                                     Helper.Print($" Student editlendi twk<3", ConsoleColor.Yellow);
                                     break;
                                 }
-                                else if (item1.Id != idd_)
-                                {
-                                    Helper.Print("Bu Id li student yoxdur,Yeniden daxil edin", ConsoleColor.Red);
-                                    goto idd;
-                                }
+                                
                             }
                         }
                         break;
